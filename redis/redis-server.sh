@@ -1,9 +1,10 @@
 #!/bin/bash
 param="redis-dev"
 
-source `dirname $0`/../stop.sh
-
-if docker ps | grep $param > /dev/null 2>&1
+if source `dirname $0`/../stop.sh
+then
+    echo "$param stopped and cleanup"
+elif docker ps | grep $param > /dev/null 2>&1
 then
     echo "$param already started"
 elif docker ps -a | grep $param | grep "Exited" > /dev/null 2>&1
