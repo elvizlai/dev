@@ -16,7 +16,7 @@ else
         -p 127.0.0.1:2379:2379 \
         -p 127.0.0.1:4001:4001 \
         --name $param \
-        quay.io/coreos/etcd etcd \
+        gcr.io/etcd-development/etcd etcd \
         --listen-client-urls 'http://0.0.0.0:2379,http://0.0.0.0:4001' \
         --advertise-client-urls 'http://0.0.0.0:2379,http://0.0.0.0:4001' \
         --debug=true
